@@ -1,0 +1,4 @@
+MOV AL, 08H  
+MOV BL, 05H
+MUL AL, BL  
+HLT

@@ -1,0 +1,4 @@
+MOV AX, [8000H]  
+MOV BX, [8002H]
+MUL AX 
+HLT

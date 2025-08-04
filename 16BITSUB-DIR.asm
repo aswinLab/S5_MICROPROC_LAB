@@ -1,0 +1,5 @@
+MOV AX, [8000H]  
+MOV BX, [8002H]
+SUB AX, BX
+MOV [8004H], AX  
+HLT
