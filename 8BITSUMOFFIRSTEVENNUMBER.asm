@@ -1,0 +1,8 @@
+MOV AL, 00H
+MOV CL, [8000H]  
+MOV BL, 00H
+L1:ADD AL, BL
+ADD BL, 02
+LOOP L1               
+MOV [8010H], AL    
+HLT
