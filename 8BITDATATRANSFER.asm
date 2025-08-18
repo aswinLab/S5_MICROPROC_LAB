@@ -1,0 +1,11 @@
+; Transfer 10 values from 8000 to 9000
+
+MOV SI, 8000H
+MOV DI, 9000H
+MOV CL, 0AH
+L1: MOV AL, [SI]
+MOV [DI], AL
+INC SI
+INC DI
+LOOP L1
+HLT

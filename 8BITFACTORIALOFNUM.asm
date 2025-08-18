@@ -1,0 +1,8 @@
+MOV AL, 01H
+MOV CL, [8000H]  
+MOV BL, 01H
+L1:MUL BL
+INC BL
+LOOP L1               
+MOV [8010H], AL    
+HLT
