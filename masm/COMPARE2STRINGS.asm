@@ -1,0 +1,30 @@
+DATA SEGMENT
+    STR1 DB "hello", '$'
+    STR2 DB "hello", '$'
+    MSG1 DB "equal", '$'
+    MSG2 DB "not equal", '$'
+DATA ENDS
+CODE SEGMENT
+    ASSUME CS:CODE, DS:DATA
+    START:
+    MOV AX, DATA
+    MOV DS, AX
+    MOV AX, DATA
+    MOV ES, AX
+    MOV SI, OFFSET STR1 ; LEA SI, STR1
+    MOV DI, OFFSET STR2 ; LEA DI, STR2
+    MOV CL, 05H
+    CLD
+    REPE CMPSB
+    JNZ L1
+    ; MOV DI, OFFH
+    LEA DX, MSG1
+    MOV AH, 09H
+    INT 21H
+    JMP L2
+    L1:;MOV DI,O1H
+    LEA DX, MSG2
+    MOV AH, 09H
+    INT 21H
+    L2: CODE ENDS
+END START
