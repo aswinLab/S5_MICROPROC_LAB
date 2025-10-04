@@ -1,0 +1,19 @@
+sudo apt update
+sudo apt install nasm build-essential
+
+nasm -f elf32 program.asm -o program.o
+
+ld -m elf_i386 program.o -o program
+
+
+masm set-up
+
+
+sudo apt install dosbox
+dosbox
+mount c ~/dosprog
+c:
+
+masm prog.asm;
+link prog.obj;
+prog
